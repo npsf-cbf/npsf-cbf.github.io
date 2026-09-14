@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TBD1">
+  <meta name="keywords" content="robotics">
+  <meta property="og:title" content="Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control">
+  <meta property="og:description" content="TBD2">
+  <meta property="og:image" content="https://npsf-cbf.github.io/static/images/framework.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://npsf-cbf.github.io/">
+  <title>Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Controls</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans:400,500,600,700|Castoro&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="/static/project.css">
+</head>
+
+<body>
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control</h1>
+            <h2 class="title is-4 publication-venue">arXiv 2026</h2>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Authors</span>
+            </div>
+            <div class="is-size-5 publication-affiliation">
+              Anonymous Affiliation
+            </div>
+
+            <div class="publication-links">
+              <span class="link-block">
+                <span class="button is-normal is-rounded is-dark coming-soon" aria-disabled="true">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code (Coming Soon)</span>
+                </span>
+              </span>
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark" href="#bibtex">
+                  <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- 
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure class="teaser-figure">
+          <img src="/static/images/systems.png"
+               alt="Four contact-force safety examples: box contact, planar push, box pivot, and hopper">
+        </figure>
+        <h2 class="subtitle has-text-centered">
+          We enable <strong>CBF-based safety filtering for implicit contact dynamics</strong> through local affine
+          contact-force prediction and robust tightening against approximation error.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section abstract-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Smoothed implicit contact dynamics enables gradient-based planning and control for contact-rich tasks
+              without predefined mode sequences. However, safety-critical control remains challenging because implicit
+              contact dynamics makes safety-filter design nontrivial. The smoothing parameter κ relaxes contact
+              complementarity constraints, which makes the dynamics smooth but affects the contact force. This paper
+              provides a safety-filtering framework for smoothed implicit contact dynamics. We first derive a discrete-time
+              control barrier function (CBF) constraint using a first-order Taylor approximation of the implicitly defined
+              contact force. We show that, although reducing κ can improve local force-approximation accuracy, the resulting
+              closed-loop force-constraint violations can vary non-monotonically with κ. Motivated by this observation, we
+              introduce boundary-focused rollouts that screen candidate κ values by comparing the predicted safety margin
+              with the observed one-step under-prediction. We then robustly tighten the predicted CBF constraint with a
+              fixed margin to account for residual force under-prediction. Simulations on four contact-rich systems show
+              that the proposed method eliminates force violations observed under a standard CBF.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="paper-figure framework-figure">
+        <img src="/static/images/framework.png"
+             alt="The proposed robust CBF framework for smoothed implicit contact dynamics">
+        <figcaption>
+          A local affine prediction makes the implicit contact model QP-compatible; κ screening and a robust margin
+          address linearization error, with a conditional extension to unsmoothed dynamics.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small takeaway-strip">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Smaller <span class="accent">κ is not necessarily safer.</span></h2>
+        <p class="subtitle is-5">
+          Smoothing changes both the local approximation error and the closed-loop contact response.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-vcentered is-variable is-7">
+        <div class="column is-6">
+          <figure class="paper-figure compact-figure">
+            <img src="/static/images/kappa-sweep.png"
+                 alt="Kappa sweep results across four contact-rich systems">
+            <figcaption>
+              κ-sweep results across four systems. The shaded area marks the unsafe region.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="column is-6">
+          <div class="content method-copy">
+            <h2 class="title is-3">Boundary-focused κ screening</h2>
+            <p>
+              Candidate κ values are evaluated on the same short-horizon rollouts near the safety boundary. The screening
+              score compares the lower-tail predicted safety margin with the upper-tail one-step under-prediction.
+            </p>
+            <p>
+              This selects a task-compatible smoothing value for the calibrated operating region instead of treating κ as
+              a purely numerical parameter.
+            </p>
+            <div class="equation-card" aria-label="Tightened control barrier function constraint">
+              ĥ<sub>k+1</sub>(u<sub>k</sub>; κ) ≥ (1 − α)h<sub>k</sub> + δ<sub>κ</sub>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section results-section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Robust contact-force safety</h2>
+          <p class="subtitle is-5">
+            The robust CBF removes the residual force-limit violations caused by local prediction error.
+          </p>
+        </div>
+      </div>
+
+      <figure class="paper-figure wide-figure">
+        <img src="/static/images/force-results.png"
+             alt="Control inputs and contact forces for box contact, planar push, box pivot, and hopper systems">
+        <figcaption>
+          Nominal (gray), standard CBF (blue), and robust CBF (orange) over four systems. Red lines and shading denote
+          force limits and unsafe regions. In the reported rollouts, the robust CBF produces zero observed violations.
+        </figcaption>
+      </figure>
+
+      <div class="columns is-centered result-cards">
+        <div class="column is-4">
+          <div class="result-card">
+            <p class="result-value">0</p>
+            <p class="result-label">observed rCBF violations</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="result-card">
+            <p class="result-value">4</p>
+            <p class="result-label">contact-rich systems evaluated</p>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="result-card">
+            <p class="result-value">QP</p>
+            <p class="result-label">compatible online safety filter</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small takeaway-strip">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Additional simulation comparisons</h2>
+        <p class="subtitle is-5">Qualitative standard-CBF and robust-CBF comparisons on two robotic systems.</p>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="section video-section" id="videos">
+    <div class="container is-max-widescreen">
+      <div class="video-stack">
+        <article class="video-card">
+          <video controls playsinline autoplay muted loop preload="metadata"
+                 poster="/static/images/humanoid_picture.png">
+            <source src="/medias/humanoid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption">
+            <h3 class="title is-5">Humanoid simulation</h3>
+            <p>
+              TBD
+            </p>
+          </div>
+        </article>
+
+         <article class="video-card">
+          <video controls playsinline autoplay muted loop preload="metadata"
+                 poster="/static/images/mir_picture.png">
+            <source src="/medias/mir.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption">
+            <h3 class="title is-5">MiR robot</h3>
+            <p>
+              TBD
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section> 
+
+  <section class="section bibtex-section" id="bibtex">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">BibTeX</h2>
+      <pre><code></code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              Website design adapted from <a href="https://lujieyang.github.io/physicsgen/">PhysicsGen</a>
+              and the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project-page template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
