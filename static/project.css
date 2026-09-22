@@ -211,6 +211,11 @@ body {
   font-size: 0.9rem;
 }
 
+.video-section > .container {
+  max-width: 1800px;
+  width: 100%;
+}
+
 .video-card {
   background: var(--paper);
   border: 1px solid var(--line);
