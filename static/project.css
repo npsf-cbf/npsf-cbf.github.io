@@ -334,6 +334,46 @@ body {
   width: 100%;
 }
 
+.simulation-legend {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16pt;
+  gap: 0.75rem 1.5rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0 auto 1.5rem;
+  max-width: 100%;
+  padding: 0.75rem 1.25rem;
+  width: fit-content;
+}
+
+.simulation-legend li {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.simulation-legend .legend-line {
+  display: block;
+  flex: 0 0 48px;
+  height: 10px;
+}
+
+.simulation-legend .legend-fno {
+  background: #7CB342;
+}
+
+.simulation-legend .legend-deeponet {
+  background: #D9534F;
+}
+
+.simulation-legend .legend-sor {
+  background: #3B75AF;
+}
+
 .video-card {
   background: var(--paper);
   border: 1px solid var(--line);
