@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="TBD1">
+  <meta name="description" content="Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control">
   <meta name="keywords" content="robotics">
   <meta property="og:title" content="Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control">
-  <meta property="og:description" content="TBD2">
+  <meta property="og:description" content="Neural Operator Poisson Safety Function for Robust Model-Free Safety-Critical Control">
   <meta property="og:image" content="https://npsf-cbf.github.io/static/images/framework.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://npsf-cbf.github.io/">
@@ -249,8 +249,29 @@
       </figure>
       <div class="delta-analysis">
         <div class="content has-text-justified delta-analysis-copy">
-          <!-- Replace TBD with the explanation of the delta analysis. -->
-          <p>TBD</p>
+          <p>
+            <strong>Analysis of
+              <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="delta subscript h"><msub><mi>δ</mi><mi>h</mi></msub></math>
+              and
+              <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="delta subscript gradient h"><msub><mi>δ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub></math></strong>:
+            We additionally analyze the behavior of the controller with respect to
+            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="delta subscript h"><msub><mi>δ</mi><mi>h</mi></msub></math>
+            and
+            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="delta subscript gradient h"><msub><mi>δ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub></math>.
+            As shown in the right-hand plot, the controller shows more conservative behavior as
+            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="delta subscript h"><msub><mi>δ</mi><mi>h</mi></msub></math>
+            increases. A higher mean value of
+            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="h of y, t">
+              <mrow><mi>h</mi><mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo></mrow>
+            </math>
+            indicates that the robot moves farther away from obstacles. On the other hand, increasing
+            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="delta subscript gradient h"><msub><mi>δ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub></math>
+            leads to a stronger restriction on the input velocity. Therefore,
+            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="delta subscript h"><msub><mi>δ</mi><mi>h</mi></msub></math>
+            and
+            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="delta subscript gradient h"><msub><mi>δ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub></math>
+            can be selected based on the estimation uncertainty, sensing noise, and the desired level of conservatism.
+          </p>
         </div>
         <figure class="paper-figure delta-analysis-figure">
           <a href="/medias/figures/delta_analysis_2.pdf" target="_blank" rel="noopener noreferrer"
