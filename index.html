@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/css/bulma.min.css">
   <link rel="stylesheet" href="/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="/static/project.css?v=20260922-subtitles">
+  <link rel="stylesheet" href="/static/project.css?v=20260922-error-bound-figures">
   <script src="/static/project.js?v=20260922-experiments" defer></script>
 </head>
 
@@ -151,29 +151,42 @@
 
   <section class="section content-section" id="online-error-bound-estimation">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Online Error Bound Estimation</h2>
-          <h3 class="section-question">
-            How to obtain
-            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="epsilon subscript h of y, t">
-              <mrow>
-                <msub><mi>ϵ</mi><mi>h</mi></msub>
-                <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
-              </mrow>
-            </math>
-            and
-            <span class="question-formula"><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="epsilon subscript gradient h of y, t">
-              <mrow>
-                <msub><mi>ϵ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub>
-                <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
-              </mrow>
-            </math>?</span>
-          </h3>
-          <div class="content has-text-justified">
-            <p>TBD</p>
-          </div>
+      <h2 class="title is-3 has-text-centered">Online Error Bound Estimation</h2>
+      <h3 class="section-question">
+        How to obtain
+        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="epsilon subscript h of y, t">
+          <mrow>
+            <msub><mi>ϵ</mi><mi>h</mi></msub>
+            <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
+          </mrow>
+        </math>
+        and
+        <span class="question-formula"><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="epsilon subscript gradient h of y, t">
+          <mrow>
+            <msub><mi>ϵ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub>
+            <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
+          </mrow>
+        </math>?</span>
+      </h3>
+      <figure class="paper-figure error-bound-figure">
+        <a href="/medias/figures/hompage_online_error_bound_est.pdf" target="_blank" rel="noopener noreferrer"
+           aria-label="Open the online error bound estimation diagram PDF in a new tab">
+          <img src="/medias/figures/hompage_online_error_bound_est.svg" width="1800" height="600" loading="lazy"
+               alt="Online error bound estimation using obstacle boundary points measured by the robot's LiDAR sensor.">
+        </a>
+      </figure>
+      <div class="delta-analysis">
+        <div class="content has-text-justified delta-analysis-copy">
+          <!-- Replace TBD with the explanation of the delta analysis. -->
+          <p>TBD</p>
         </div>
+        <figure class="paper-figure delta-analysis-figure">
+          <a href="/medias/figures/delta_analysis_2.pdf" target="_blank" rel="noopener noreferrer"
+             aria-label="Open the delta analysis PDF in a new tab">
+            <img src="/medias/figures/delta_analysis_2.svg" width="2100" height="898" loading="lazy"
+                 alt="Comparison of FNO and DeepONet: mean safety function versus delta h, and control input norm versus delta gradient h.">
+          </a>
+        </figure>
       </div>
     </div>
   </section>

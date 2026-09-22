@@ -175,18 +175,41 @@ body {
 }
 
 #overview > .container,
-#training > .container {
+#training > .container,
+#online-error-bound-estimation > .container {
   max-width: 1125px;
 }
 
 .overview-figure,
-.training-figure {
+.training-figure,
+.error-bound-figure {
   margin-top: 1.5rem;
   max-width: 1125px;
 }
 
 .overview-figure img,
-.training-figure img {
+.training-figure img,
+.error-bound-figure img,
+.delta-analysis-figure img {
+  width: 100%;
+}
+
+.delta-analysis {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 2.5rem;
+}
+
+.delta-analysis-copy {
+  font-size: 16pt;
+  margin: 0;
+  min-width: 0;
+}
+
+.delta-analysis-figure {
+  margin: 0;
   width: 100%;
 }
 
@@ -408,6 +431,10 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .delta-analysis {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .video-stack {
     grid-template-columns: minmax(0, 1fr);
   }
