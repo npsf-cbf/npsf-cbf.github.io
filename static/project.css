@@ -106,7 +106,8 @@ body {
   color: var(--accent-dark);
 }
 
-.abstract-section {
+.abstract-section,
+.content-section {
   border-top: 1px solid var(--line);
 }
 
@@ -221,12 +222,25 @@ body {
 
 .video-stack {
   display: grid;
-  gap: 3rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .video-card video {
+  aspect-ratio: 2 / 1;
   background: #111820;
   display: block;
+  object-fit: contain;
+  width: 100%;
+}
+
+.video-placeholder {
+  aspect-ratio: 2 / 1;
+  background: #111820;
+  color: #d8dfe6;
+  display: grid;
+  font-size: 1.5rem;
+  place-items: center;
   width: 100%;
 }
 
@@ -259,7 +273,17 @@ body {
   color: var(--accent-dark);
 }
 
+@media screen and (max-width: 1023px) {
+  .video-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .video-stack {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .publication-header .hero-body {
     padding-top: 3rem;
   }
