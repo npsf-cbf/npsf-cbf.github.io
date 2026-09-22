@@ -86,7 +86,31 @@
   <section class="section content-section" id="overview">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Overview</h2>
-      <figure class="paper-figure overview-figure">
+      <div class="content has-text-justified">
+        <p>
+          We develop a robust model-free safety-critical control framework that leverages a neural operator to rapidly
+          infer a PSF and integrate it into the forward invariance condition as shown in the
+          <a href="#overview-figure">overview figure</a>.
+        </p>
+        <p>
+          <strong>1) Fast Poisson safety function (PSF) inference</strong>: We use a neural operator to learn a solution
+          operator for the Poisson PDE, allowing fast PSF construction across varying environments without repeatedly
+          solving computationally expensive PDEs.
+        </p>
+        <p>
+          <strong>2) Robust model-free safety-critical control</strong>: We derive a robust model-free safety-critical
+          control design that explicitly accounts for bounded approximation errors in the inferred safety function and
+          its derivatives, providing worst-case safety guarantees without requiring explicit knowledge of the robot
+          dynamics.
+        </p>
+        <p>
+          <strong>3) Online error bound estimation</strong>: In practice, obtaining worst-case approximation error bounds
+          online is non-trivial; thus we propose local approximation error estimation that exploits measurements of
+          obstacle boundaries from onboard perception sensors (e.g. LiDAR), which are then used as robust margins for
+          practical deployment in the real world.
+        </p>
+      </div>
+      <figure class="paper-figure overview-figure" id="overview-figure">
         <a href="/medias/figures/hompage_overview_1.pdf" target="_blank" rel="noopener noreferrer"
            aria-label="Open the overview diagram PDF in a new tab">
           <img src="/medias/figures/hompage_overview_1.svg" width="1800" height="1500" loading="lazy"
