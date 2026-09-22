@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/css/bulma.min.css">
   <link rel="stylesheet" href="/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="/static/project.css?v=20260922-section-body">
+  <link rel="stylesheet" href="/static/project.css?v=20260922-training-text">
   <script src="/static/project.js?v=20260922-abstract-toggle" defer></script>
 </head>
 
@@ -160,7 +160,40 @@
         </math>?</span>
       </h3>
       <div class="content has-text-justified">
-        <p>TBD</p>
+        <p>
+          From each occupancy map, we compute the corresponding forcing term,
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math>,
+          and subsequently solve
+          <a href="/paper/paper.pdf#page=2" target="_blank" rel="noopener noreferrer"
+             aria-label="Equation 3 in the paper, opens in a new tab">Eq. (3)</a>
+          using successive over relaxation (SOR)
+          <a href="/paper/paper.pdf#page=8" target="_blank" rel="noopener noreferrer"
+             aria-label="Reference 12 in the paper, opens in a new tab">[12]</a>
+          to obtain the corresponding PSF,
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>h</mi></math>
+          with respect to
+          <math xmlns="http://www.w3.org/1998/Math/MathML"><mi class="math-vector" mathvariant="normal">y</mi></math>.
+          We then construct the dataset,
+          <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="D equals the set of tuples f i, h i, gradient h i, indexed by i up to N">
+            <mrow>
+              <mi>𝒟</mi><mo>=</mo><mo>{</mo><mo>(</mo>
+              <msub><mi>f</mi><mi>i</mi></msub><mo>,</mo>
+              <msub><mi>h</mi><mi>i</mi></msub><mo>,</mo>
+              <mo>∇</mo><msub><mi>h</mi><mi>i</mi></msub>
+              <mo>)</mo><msubsup><mo>}</mo><mi>i</mi><mi>N</mi></msubsup>
+            </mrow>
+          </math>
+          where <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math>
+          denotes the number of samples. Afterwards, the neural operator (modeled using either DeepONet or FNO)
+          is trained in a supervised manner by minimizing the loss function,
+          <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="L equals L subscript h plus lambda subscript gradient h times L subscript gradient h">
+            <mrow>
+              <mi>ℒ</mi><mo>=</mo><msub><mi>ℒ</mi><mi>h</mi></msub><mo>+</mo>
+              <msub><mi>λ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub>
+              <msub><mi>ℒ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub>
+            </mrow>
+          </math>.
+        </p>
       </div>
       <figure class="paper-figure training-figure">
         <a href="/medias/figures/hompage_training_2.pdf" target="_blank" rel="noopener noreferrer"
@@ -192,7 +225,26 @@
         </math>?</span>
       </h3>
       <div class="content has-text-justified">
-        <p>TBD</p>
+        <p>
+          Given the set of the multiple measured obstacle boundary points,
+          <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Y superscript b of t is a subset of R cubed">
+            <mrow>
+              <msup><mi>𝒴</mi><mi>b</mi></msup><mo>(</mo><mi>t</mi><mo>)</mo>
+              <mo>⊂</mo><msup><mi>ℝ</mi><mn>3</mn></msup>
+            </mrow>
+          </math>,
+          <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="e hat subscript h">
+            <msub><mover accent="true"><mi>e</mi><mo>^</mo></mover><mi>h</mi></msub>
+          </math>
+          and
+          <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="bold e hat subscript gradient h">
+            <msub>
+              <mover accent="true"><mi mathvariant="normal">𝒆</mi><mo>^</mo></mover>
+              <mrow><mo>∇</mo><mi>h</mi></mrow>
+            </msub>
+          </math>
+          are estimated via a least-squares regression.
+        </p>
       </div>
       <figure class="paper-figure error-bound-figure">
         <a href="/medias/figures/hompage_online_error_bound_est.pdf" target="_blank" rel="noopener noreferrer"
@@ -367,7 +419,15 @@
     <div class="container is-max-widescreen">
       <h2 class="title is-3 has-text-centered mb-5">Simulations</h2>
       <div class="content has-text-justified">
-        <p>TBD</p>
+        <p>
+          We demonstrate the proposed framework in collision avoidance scenarios on a mobile robot and a quadrotor.
+          In these simulations, we use robot-centered local occupancy maps from simulated LiDAR range measurements
+          of surrounding obstacles. We train neural operator models for each system with occupancy maps generated
+          by uniformly sampling the poses of primitive obstacles (e.g. cylinders and cuboids) on a 2D grid
+          (<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>200</mn><mn>2</mn></msup></math>)
+          and a 3D grid
+          (<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>100</mn><mn>3</mn></msup></math>), respectively.
+        </p>
       </div>
       <div class="video-stack">
         <article class="video-card">
@@ -429,7 +489,11 @@
     <div class="container is-max-widescreen">
       <h2 class="title is-3 has-text-centered mb-5">Experiments</h2>
       <div class="content has-text-justified">
-        <p>TBD</p>
+        <p>
+          We demonstrate the proposed framework on MiR R100 commercial platform, which is equipped with an
+          established low-level velocity controller, across four collision avoidance scenarios: static environment,
+          moving obstacles with low and high robot speeds.
+        </p>
       </div>
 
       <section class="experiment-case" aria-labelledby="experiment-static">

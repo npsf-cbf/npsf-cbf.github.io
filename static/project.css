@@ -185,7 +185,8 @@ body {
   font-size: 1.1em;
 }
 
-.section-question .math-vector {
+.section-question .math-vector,
+.content .math-vector {
   font-style: normal;
   font-weight: 700;
 }
