@@ -75,7 +75,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              TBD
+              Autonomous robotic systems require safety-critical control that can quickly respond to complex and changing environments. In this paper, we propose a robust model-free safety-critical control framework that integrates a neural operator with Poisson-based safety functions (PSFs) for real-time collision avoidance. The neural operator enables fast inference of a PSF without solving a partial differential equation (PDE) repeatedly, mitigating the computational burden. However, approximation of the PDE solution introduces errors in both the predicted safety function and its derivatives; thus, we derive a worst-case robust safety condition under bounded approximation errors. Since online computation of worst-case error bounds is challenging in changing environments, we further propose a practical online error bound estimation that leverages obstacle-boundary measurements from onboard sensors (e.g. LiDAR). Lastly, we validate the proposed framework through simulations and experiments on a mobile robot, showing that the Fourier neural operator-based controller achieves efficient collision avoidance while providing accurate real-time PSF prediction.
             </p>
           </div>
         </div>
