@@ -227,12 +227,6 @@
       <div class="content has-text-justified">
         <p>
           Given the set of the multiple measured obstacle boundary points,
-          <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Y superscript b of t is a subset of R cubed">
-            <mrow>
-              <msup><mi>𝒴</mi><mi>b</mi></msup><mo>(</mo><mi>t</mi><mo>)</mo>
-              <mo>⊂</mo><msup><mi>ℝ</mi><mn>3</mn></msup>
-            </mrow>
-          </math>,
           <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="e hat subscript h">
             <msub><mover accent="true"><mi>e</mi><mo>^</mo></mover><mi>h</mi></msub>
           </math>
@@ -420,9 +414,9 @@
       <h2 class="title is-3 has-text-centered mb-5">Simulations</h2>
       <div class="content has-text-justified">
         <p>
-          We demonstrate the proposed framework in collision avoidance scenarios on a mobile robot and a quadrotor.
+          We demonstrate the proposed framework in collision avoidance scenarios on a mobile robot, a quadrotor, a humanoid, and a quadruped.
           In these simulations, we use robot-centered local occupancy maps from simulated LiDAR range measurements
-          of surrounding obstacles. We train neural operator models for each system with occupancy maps generated
+          of surrounding obstacles. We train neural operator models for 2D and 3D systems with occupancy maps generated
           by uniformly sampling the poses of primitive obstacles (e.g. cylinders and cuboids) on a 2D grid
           (<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>200</mn><mn>2</mn></msup></math>)
           and a 3D grid
