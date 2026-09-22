@@ -232,12 +232,12 @@ body {
 }
 
 .video-frame {
-  aspect-ratio: 2 / 1;
+  aspect-ratio: var(--video-aspect-ratio, 2 / 1);
   background: #111820;
 }
 
 .video-card video {
-  aspect-ratio: 2 / 1;
+  aspect-ratio: var(--video-aspect-ratio, 2 / 1);
   background: #111820;
   display: block;
   object-fit: contain;
@@ -309,6 +309,18 @@ body {
   font-size: 1.5rem;
   place-items: center;
   width: 100%;
+}
+
+#experiments {
+  --video-aspect-ratio: 16 / 9;
+}
+
+.experiment-case + .experiment-case {
+  margin-top: 3rem;
+}
+
+.experiment-videos {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .video-caption {

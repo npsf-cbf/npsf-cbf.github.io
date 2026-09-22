@@ -27,10 +27,11 @@
     const viewportWidth = document.documentElement.clientWidth;
     const viewportHeight = window.innerHeight;
     const source = frame.getBoundingClientRect();
-    const width = Math.min(1120, viewportWidth - margin * 2, (viewportHeight - margin * 2) * 2);
+    const aspectRatio = source.width / source.height;
+    const width = Math.min(1120, viewportWidth - margin * 2, (viewportHeight - margin * 2) * aspectRatio);
     if (width <= source.width) return;
 
-    const height = width / 2;
+    const height = width / aspectRatio;
     const left = Math.max(margin, Math.min(source.left + source.width / 2 - width / 2, viewportWidth - width - margin));
     const top = Math.max(margin, Math.min(source.top + source.height / 2 - height / 2, viewportHeight - height - margin));
 
@@ -46,7 +47,7 @@
     }
   }
 
-  document.querySelectorAll('#videos .video-frame').forEach(frame => {
+  document.querySelectorAll('.video-section .video-frame').forEach(frame => {
     const video = frame.querySelector('video');
 
     frame.addEventListener('pointerenter', event => {
