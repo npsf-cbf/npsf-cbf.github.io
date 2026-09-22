@@ -265,7 +265,8 @@ body {
 
 .delta-analysis-figure {
   margin: 0;
-  width: 100%;
+  max-width: calc(50vw - 2.5rem);
+  width: 125%;
 }
 
 .compact-figure {
@@ -531,6 +532,11 @@ body {
 @media screen and (max-width: 768px) {
   .delta-analysis {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .delta-analysis-figure {
+    max-width: 100%;
+    width: 100%;
   }
 
   .video-stack {
