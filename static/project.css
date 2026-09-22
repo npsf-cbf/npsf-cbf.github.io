@@ -250,8 +250,17 @@ body {
 }
 
 .delta-analysis-copy {
+  background: #FFF8E1;
+  border: 1px solid #E6C96A;
+  border-radius: 14px;
+  color: #514521;
   margin: 0;
   min-width: 0;
+  padding: 24px;
+}
+
+.delta-analysis-copy strong {
+  color: inherit;
 }
 
 .delta-analysis-figure {
