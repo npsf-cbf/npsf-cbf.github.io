@@ -231,12 +231,74 @@ body {
   gap: 1.5rem;
 }
 
+.video-frame {
+  aspect-ratio: 2 / 1;
+  background: #111820;
+}
+
 .video-card video {
   aspect-ratio: 2 / 1;
   background: #111820;
   display: block;
   object-fit: contain;
   width: 100%;
+}
+
+.video-card video.is-expanded {
+  position: fixed;
+  top: var(--preview-top);
+  left: var(--preview-left);
+  right: auto;
+  bottom: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: var(--preview-width);
+  height: var(--preview-height);
+  max-width: none;
+  z-index: 1001;
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  animation: video-preview-in 160ms ease-out;
+}
+
+.video-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(17, 24, 32, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 160ms ease, visibility 160ms ease;
+}
+
+.video-backdrop.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes video-preview-in {
+  from {
+    opacity: 0.7;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-card video.is-expanded {
+    animation: none;
+  }
+
+  .video-backdrop {
+    transition: none;
+  }
 }
 
 .video-placeholder {

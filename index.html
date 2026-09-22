@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="/css/bulma.min.css">
   <link rel="stylesheet" href="/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="/static/project.css?v=20260922-1800">
+  <link rel="stylesheet" href="/static/project.css?v=20260922-hover">
+  <script src="/static/project.js?v=20260922-hover" defer></script>
 </head>
 
 <body>
@@ -259,11 +260,13 @@
       <h2 class="title is-3 has-text-centered mb-5">4. Simulations</h2>
       <div class="video-stack">
         <article class="video-card">
-          <video controls playsinline autoplay muted loop preload="metadata"
-                 poster="/static/images/mir_picture.png">
-            <source src="/medias/mir.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div class="video-frame">
+            <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
+                   aria-label="Mobile robot simulation" poster="/static/images/mir_picture.png">
+              <source src="/medias/mir.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <div class="video-caption">
             <h3 class="title is-5">1. Mobile robot</h3>
             <p>
@@ -273,10 +276,13 @@
         </article>
 
         <article class="video-card">
-          <video controls playsinline autoplay muted loop preload="metadata">
-            <source src="/medias/quadrotor.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div class="video-frame">
+            <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
+                   aria-label="Quadrotor simulation">
+              <source src="/medias/quadrotor.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <div class="video-caption">
             <h3 class="title is-5">2. Quadrotor</h3>
             <p>
@@ -286,11 +292,13 @@
         </article>
 
         <article class="video-card">
-          <video controls playsinline autoplay muted loop preload="metadata"
-                 poster="/static/images/humanoid_picture.png">
-            <source src="/medias/humanoid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div class="video-frame">
+            <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
+                   aria-label="Humanoid simulation" poster="/static/images/humanoid_picture.png">
+              <source src="/medias/humanoid.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <div class="video-caption">
             <h3 class="title is-5">3. Humanoid</h3>
             <p>
@@ -300,10 +308,13 @@
         </article>
 
         <article class="video-card">
-          <video controls playsinline autoplay muted loop preload="metadata">
-            <source src="/medias/quadruped.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <div class="video-frame">
+            <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
+                   aria-label="Quadruped simulation">
+              <source src="/medias/quadruped.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <div class="video-caption">
             <h3 class="title is-5">4. Quadruped</h3>
             <p>
@@ -349,5 +360,6 @@
       </div>
     </div>
   </footer>
+  <div class="video-backdrop" aria-hidden="true"></div>
 </body>
 </html>
