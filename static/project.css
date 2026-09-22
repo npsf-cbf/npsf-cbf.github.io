@@ -115,6 +115,39 @@ body {
   line-height: 1.75;
 }
 
+#abstract .content,
+#overview .content {
+  font-size: 16pt;
+}
+
+.section-question {
+  background: #eef6ff;
+  border: 1px solid #d4e6f8;
+  border-radius: 14px;
+  color: #214d73;
+  font-size: 16pt;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0 auto 1.75rem;
+  max-width: 100%;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  width: fit-content;
+}
+
+.section-question math {
+  font-size: 1.1em;
+}
+
+.section-question .math-vector {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.question-formula {
+  white-space: nowrap;
+}
+
 .paper-figure {
   margin-left: auto;
   margin-right: auto;

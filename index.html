@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/css/bulma.min.css">
   <link rel="stylesheet" href="/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="/static/project.css?v=20260922-figures-125">
+  <link rel="stylesheet" href="/static/project.css?v=20260922-subtitles">
   <script src="/static/project.js?v=20260922-experiments" defer></script>
 </head>
 
@@ -123,10 +123,26 @@
   <section class="section content-section" id="training">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Training</h2>
+      <h3 class="section-question">
+        How to obtain
+        <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="h hat of y, t">
+          <mrow>
+            <mover accent="true"><mi>h</mi><mo>^</mo></mover>
+            <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
+          </mrow>
+        </math>
+        and
+        <span class="question-formula"><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="gradient of h hat of y, t">
+          <mrow>
+            <mo>∇</mo><mover accent="true"><mi>h</mi><mo>^</mo></mover>
+            <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
+          </mrow>
+        </math>?</span>
+      </h3>
       <figure class="paper-figure training-figure">
-        <a href="/medias/figures/hompage_training.pdf" target="_blank" rel="noopener noreferrer"
+        <a href="/medias/figures/hompage_training_2.pdf" target="_blank" rel="noopener noreferrer"
            aria-label="Open the training diagram PDF in a new tab">
-          <img src="/medias/figures/hompage_training.svg" width="1800" height="900" loading="lazy"
+          <img src="/medias/figures/hompage_training_2.svg" width="1800" height="900" loading="lazy"
                alt="Training workflow: occupancy maps are converted into forcing functions, Poisson safety functions, and gradients to train FNO and DeepONet neural operators.">
         </a>
       </figure>
@@ -138,6 +154,22 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Online Error Bound Estimation</h2>
+          <h3 class="section-question">
+            How to obtain
+            <math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="epsilon subscript h of y, t">
+              <mrow>
+                <msub><mi>ϵ</mi><mi>h</mi></msub>
+                <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
+              </mrow>
+            </math>
+            and
+            <span class="question-formula"><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="epsilon subscript gradient h of y, t">
+              <mrow>
+                <msub><mi>ϵ</mi><mrow><mo>∇</mo><mi>h</mi></mrow></msub>
+                <mo>(</mo><mi class="math-vector" mathvariant="normal">y</mi><mo>,</mo><mi>t</mi><mo>)</mo>
+              </mrow>
+            </math>?</span>
+          </h3>
           <div class="content has-text-justified">
             <p>TBD</p>
           </div>
@@ -400,12 +432,12 @@
       </section>
 
       <section class="experiment-case" aria-labelledby="experiment-moving_1">
-        <h3 class="title is-4" id="experiment-moving_1">moving_1</h3>
+        <h3 class="title is-4" id="experiment-moving_1">Moving_1</h3>
         <div class="video-stack experiment-videos">
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_1 SOR experiment">
+                     aria-label="Moving_1 SOR experiment">
                 <source src="/medias/experiments/moving_1/ICRA2027_moving_1_sor.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -418,7 +450,7 @@
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_1 FNO experiment">
+                     aria-label="Moving_1 FNO experiment">
                 <source src="/medias/experiments/moving_1/ICRA2027_moving_1_fno.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -431,7 +463,7 @@
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_1 DeepONet experiment">
+                     aria-label="Moving_1 DeepONet experiment">
                 <source src="/medias/experiments/moving_1/ICRA2027_moving_1_deeponet.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -444,12 +476,12 @@
       </section>
 
       <section class="experiment-case" aria-labelledby="experiment-moving_2">
-        <h3 class="title is-4" id="experiment-moving_2">moving_2</h3>
+        <h3 class="title is-4" id="experiment-moving_2">Moving_2</h3>
         <div class="video-stack experiment-videos">
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_2 SOR experiment">
+                     aria-label="Moving_2 SOR experiment">
                 <source src="/medias/experiments/moving_2/ICRA2027_moving_2_sor.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -462,7 +494,7 @@
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_2 FNO experiment">
+                     aria-label="Moving_2 FNO experiment">
                 <source src="/medias/experiments/moving_2/ICRA2027_moving_2_fno.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -475,7 +507,7 @@
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_2 DeepONet experiment">
+                     aria-label="Moving_2 DeepONet experiment">
                 <source src="/medias/experiments/moving_2/ICRA2027_moving_2_deeponet.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -488,12 +520,12 @@
       </section>
 
       <section class="experiment-case" aria-labelledby="experiment-moving_fast">
-        <h3 class="title is-4" id="experiment-moving_fast">moving_fast</h3>
+        <h3 class="title is-4" id="experiment-moving_fast">Moving_fast</h3>
         <div class="video-stack experiment-videos">
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_fast SOR experiment">
+                     aria-label="Moving_fast SOR experiment">
                 <source src="/medias/experiments/moving_fast/ICRA2027_moving_fast_sor.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -506,7 +538,7 @@
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_fast FNO experiment">
+                     aria-label="Moving_fast FNO experiment">
                 <source src="/medias/experiments/moving_fast/ICRA2027_mvoing_fast_fno.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -519,7 +551,7 @@
           <article class="video-card">
             <div class="video-frame">
               <video controls playsinline autoplay muted loop preload="metadata" tabindex="0"
-                     aria-label="moving_fast DeepONet experiment">
+                     aria-label="Moving_fast DeepONet experiment">
                 <source src="/medias/experiments/moving_fast/ICRA2027_moving_fast_deeponet.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
