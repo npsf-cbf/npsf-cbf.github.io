@@ -1,4 +1,24 @@
 (() => {
+  const abstractContent = document.getElementById('abstract-content');
+  const abstractToggles = document.querySelectorAll('[data-abstract-toggle]');
+
+  if (abstractContent) {
+    abstractToggles.forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = abstractContent.hidden;
+        abstractContent.hidden = !expanded;
+        abstractToggles.forEach(toggle => {
+          toggle.setAttribute('aria-expanded', String(expanded));
+          const label = toggle.querySelector('[data-abstract-label]');
+          if (label) {
+            label.textContent = expanded ? 'less' : 'more';
+            toggle.setAttribute('aria-label', expanded ? 'Hide abstract' : 'Show abstract');
+          }
+        });
+      });
+    });
+  }
+
   const backdrop = document.querySelector('.video-backdrop');
   const hoverAvailable = window.matchMedia('(hover: hover) and (pointer: fine)');
   let activeVideo = null;

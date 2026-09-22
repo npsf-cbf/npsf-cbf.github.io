@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="/css/bulma.min.css">
   <link rel="stylesheet" href="/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="/static/project.css?v=20260922-error-bound-figures">
-  <script src="/static/project.js?v=20260922-experiments" defer></script>
+  <link rel="stylesheet" href="/static/project.css?v=20260922-abstract-toggle">
+  <script src="/static/project.js?v=20260922-abstract-toggle" defer></script>
 </head>
 
 <body>
@@ -62,6 +62,17 @@
                   <span>BibTeX</span>
                 </a>
               </span>
+              <span class="link-block">
+                <button class="button is-normal is-rounded is-dark" type="button"
+                        data-abstract-toggle aria-controls="abstract-content" aria-expanded="false">
+                  <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                      <path d="M4 5h16M4 10h16M4 15h16M4 20h10" />
+                    </svg>
+                  </span>
+                  <span>Abstract</span>
+                </button>
+              </span>
             </div>
           </div>
         </div>
@@ -72,8 +83,17 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
+          <div class="abstract-heading">
+            <h2 class="title is-3" id="abstract-title">Abstract</h2>
+            <button class="abstract-more" type="button" data-abstract-toggle
+                    aria-controls="abstract-content" aria-expanded="false" aria-label="Show abstract">
+              <span data-abstract-label>more</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+          </div>
+          <div class="content has-text-justified" id="abstract-content" role="region" aria-labelledby="abstract-title" hidden>
             <p>
               Autonomous robotic systems require safety-critical control that can quickly respond to complex and changing environments. In this paper, we propose a robust model-free safety-critical control framework that integrates a neural operator with Poisson-based safety functions (PSFs) for real-time collision avoidance. The neural operator enables fast inference of a PSF without solving a partial differential equation (PDE) repeatedly, mitigating the computational burden. However, approximation of the PDE solution introduces errors in both the predicted safety function and its derivatives; thus, we derive a worst-case robust safety condition under bounded approximation errors. Since online computation of worst-case error bounds is challenging in changing environments, we further propose a practical online error bound estimation that leverages obstacle-boundary measurements from onboard sensors (e.g. LiDAR). Lastly, we validate the proposed framework through simulations and experiments on a mobile robot, showing that the Fourier neural operator-based controller achieves efficient collision avoidance while providing accurate real-time PSF prediction.
             </p>

@@ -68,7 +68,8 @@ body {
   margin-top: 1.4rem;
 }
 
-.link-block a {
+.link-block a,
+.link-block button {
   margin: 5px 3px;
 }
 
@@ -118,6 +119,47 @@ body {
 #abstract .content,
 #overview .content {
   font-size: 16pt;
+}
+
+.abstract-heading {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.abstract-heading .title {
+  margin: 0;
+}
+
+.abstract-more {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: #214d73;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  gap: 0.25rem;
+  padding: 0.5rem;
+}
+
+.abstract-more:hover {
+  background: #eef6ff;
+}
+
+.abstract-more:focus-visible {
+  outline: 2px solid #214d73;
+  outline-offset: 2px;
+}
+
+.abstract-more[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+#abstract-content {
+  margin-top: 1.5rem;
 }
 
 .section-question {
